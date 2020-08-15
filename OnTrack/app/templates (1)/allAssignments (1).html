@@ -1,0 +1,35 @@
+assignments.html{% extends "base.html" %}
+
+{% block body %}
+
+        <div class="containter">
+            <div class="jumbotron text-center">
+                <h1>Assignments for {{session['displayName']}}</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <table class="table">
+                <tr><th> </th><th>Name</th><th>Due Date</th><th>Assigned Date</th><th>Description</th></tr>
+                <!--This is the Jinja code for displaying each assignment object in the assignments list variable -->
+                {% for assignment in assignments %}
+                    <tr>
+                        <td>
+                            <!--This is where the url's are built to send both the section and assignments
+                                variables to the routes of edit and delete-->
+
+                        </td>
+                        <!--This deisplays all the assignment fields for each assignment-->
+                        <td>{{ assignment.name }}</td>
+                        <td>{{ assignment.duedate }}</td>
+                        <td>{{ assignment.assigndate }}</td>
+                        <td>{{ assignment.description }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+
+
+
+{% endblock %}

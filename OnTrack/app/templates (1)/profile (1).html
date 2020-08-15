@@ -1,0 +1,29 @@
+assignments.html{% extends "base.html" %}
+<!DOCTYPE html>
+
+
+{% block body %}
+
+    <div class="containter">
+        <div class="jumbotron text-center">
+            <h1>{{ data['displayName'] }}</h1>
+        </div>
+    </div>
+
+    <div>
+        {{ session['Teacher']}}
+        <!-- <h3>These values are all available via this users google account.</h3> -->
+        Email: {{ data['emails'][0]['value'] }}<br>
+        Profile Picture: <img src="{{ data['image']['url'] }}"><br>
+        
+        <!-- Img Src: {{ data['image']['url'] }}<br>
+        Image size is 50px by default but you can change it by concatenating "&sz=X" to the end of the string. "&sz=0" will set it to the full size of the original image.<br> -->
+        <!-- <b>Here is the complete list of values of OUSD accounts</b><br>
+        kind: {{ data['kind'] }}
+        {% for item in data %}
+            {{ item }}<br>
+        {% endfor %} -->
+    </div>
+
+
+{% endblock %}
