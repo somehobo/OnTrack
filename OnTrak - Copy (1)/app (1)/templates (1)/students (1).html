@@ -1,0 +1,31 @@
+students.html{% extends "base.html" %}
+
+{% block body %}
+
+        <div class="containter">
+            <div class="jumbotron text-center">
+                <h1>Assignments for {{ sectionName }}</h1>
+                <a href = "/newassignment/{{ sectionID }}">New Assignment</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <table class="table">
+                <tr><th> </th><th>Name</th><th>Due Date</th><th>Assigned Date</th><th>Description</th></tr>
+                <!--This is the Jinja code for displaying each assignment object in the assignments list variable -->
+                {% for assignment in assignments %}
+                    <tr>
+                        
+                        <!--This deisplays all the assignment fields for each assignment-->
+                        <td>{{ student.name }}</td>
+
+
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+
+
+
+{% endblock %}

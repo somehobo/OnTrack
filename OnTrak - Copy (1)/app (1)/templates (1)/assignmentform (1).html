@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+        <div class="containter">
+            <div class="jumbotron text-center">
+                <h1>New Assignment for {{ sectionName }}</h1>
+            </div>
+            <form method=post>
+                <table class="table">
+                <!--This displays the form from the form abject that was passed to the template. If the fileds have values in them
+                    that were set by the routes code, then it will be editing.  If they are empty it
+                    will create a new secion. -->
+                <tr>
+                  <td>{{ form.hidden_tag() }}{{ form.name.label }}</td>
+                  <td>{{ form.name }}</td>
+                </tr>
+                <tr>
+                  <td>{{ form.duedate.label }}</td>
+                  <td>{{ form.duedate() }}</td></tr>
+                <tr>
+                  <td>{{ form.assigndate.label }}</td>
+                  <td>{{ form.assigndate() }}</td>
+                </tr>
+                <tr>
+                  <td>{{ form.desc.label }}</td>
+                  <td>{{ form.desc(type='textarea') }}</td>
+                </tr>
+                <tr>
+                  <td colspan="2">{{form.submit()}}</td>
+                </tr>
+                </table>
+
+                {{ form.dt(class='datepicker') }}
+                {{ form.hidden_tag() }}
+                <input type="submit"/>
+        
+            </form>
+
+        </div>
+
+
+
+
+{% endblock %}
